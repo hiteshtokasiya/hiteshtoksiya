@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #yourElementId {
+            position: absolute; /* or relative */
+            left: 0;
+            top: 50px; /* Example position */
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="yourElementId"></div>
+
+<script>
+    let element = document.getElementById('yourElementId');
+    let position = 0;
+
+    function move() {
+        if (position < 350) {
+            position++;
+            element.style.left = position + 'px';
+            requestAnimationFrame(move);
+        }
+    }
+
+    move();
+</script>
+
+</body>
+</html>
